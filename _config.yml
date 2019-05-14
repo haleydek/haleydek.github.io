@@ -1,11 +1,11 @@
 # Site settings
 author: Haley DeKeyser
-title: 
+title: What the Tech?!
 header-img: img/home-bg.png
 email: hcd09@live.com
 copyright_name: Haley DeKeyser
 description: > # this means to ignore newlines until "baseurl:"
-  
+  Musings of a 20-something's leap into tech
 baseurl: "" # the subpath of your site, e.g. /blog
 twitter_username: 
 github_username:  haleydek
