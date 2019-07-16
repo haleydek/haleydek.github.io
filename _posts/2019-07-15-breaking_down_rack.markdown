@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Breaking down rack"
-date:       2019-07-15 20:23:41 +0000
+date:       2019-07-15 16:23:42 -0400
 permalink:  breaking_down_rack
 ---
 
@@ -30,7 +30,7 @@ This is not the full list of info included in the env hash, but it gives you an 
 When the `#call` method accepts env as an argument, a new Rack::Request object is created. Upon initialization of the Rack::Request object, we gain access to a new set of methods that make it easy to grab and interpret the env data. Among these methods is the handy `#params` method.
 
 ```def call(env)
-    req = Rack::Request.new(env)
+req = Rack::Request.new(env)
 end```
 
 Your app can then match up the HTTP verb and URL path from the env hash to controller actions.
@@ -38,16 +38,16 @@ Your app can then match up the HTTP verb and URL path from the env hash to contr
 HTTP responses must be sent in an array containing a status, header, and body. Rack also takes care of this for us through the initialization of a Rack::Response object.
 
 ```def initialize(body = [], status = 200, header = {})
-    . . .
-	end```
+. . .
+end```
 
 The `#finish` method is called on the Rack::Response object to simply put the status, header, and body into an array.
 	
 	```def call(env)
-    req = Rack::Request.new(env)
-		resp = Rack::Response.new
-		resp.finish
-end```
+	req = Rack::Request.new(env)
+	resp = Rack::Response.new
+	resp.finish
+	end```
 
 Rack prevents developers from having to manually write boilerplate code for receiving and sending HTTP responses in every app they create. This is why there were multiple gems in my app that were built using Rack!
 
