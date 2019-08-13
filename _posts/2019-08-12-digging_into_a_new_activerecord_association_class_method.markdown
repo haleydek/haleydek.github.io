@@ -14,7 +14,8 @@ I wanted to add a `collection_select` field that allowed users to select multipl
 
 I tried the code below in my trips controller.
 
-```def create
+```
+def create
     @trip = @user.trips.build(trip_params)
     @trip.destinations.build(trip_params)
 		
@@ -26,7 +27,8 @@ private
 
 def trip_params
     params.require(:trip).permit(:title, :start_date, :end_date, user_ids:[], destination_ids: [])
-end```
+end
+```
 
 However, my app was returning errors, such as "undefined attribute `:title` for Destination," or "No Method Errors" related to `:destination_ids`.
 
@@ -36,7 +38,8 @@ In response, I started digging through the "has_many" association class methods,
 
 I plugged it into the #create action, and. . . .
 
-```def create
+```
+def create
     @trip = @user.trips.build(trip_params)
 		
 		if @trip.save!
@@ -48,7 +51,8 @@ private
 
 def trip_params
     params.require(:trip).permit(:title, :start_date, :end_date, user_ids:[], destination_ids: [])
-end```
+end
+```
 
 **. . . it worked! But, why?**
 
