@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Digging into a 'new' ActiveRecord association class method"
-date:       2019-08-13 01:25:30 +0000
+date:       2019-08-12 21:25:31 -0400
 permalink:  digging_into_a_new_activerecord_association_class_method
 ---
 
