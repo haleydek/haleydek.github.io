@@ -16,12 +16,12 @@ I tried the code below in my trips controller.
 
 ```
 def create
-    @trip = @user.trips.build(trip_params)
-
-    @trip.destinations.build(trip_params)
-
-		if @trip.save!
-    . . .
+  @trip = @user.trips.build(trip_params)
+	
+  @trip.destinations.build(trip_params)
+	
+  if @trip.save!
+  . . .
 end
 
 private
@@ -45,8 +45,9 @@ I plugged it into the #create action, and. . . .
 
 ```
 def create
-@trip = @user.trips.build(trip_params)
-  if @trip.save!
+  @trip = @user.trips.build(trip_params)
+	
+	if @trip.save!
     @trip.destination_ids=(trip_params[:destination_ids])
   . . .
 end
@@ -57,6 +58,7 @@ def trip_params
   params.require(:trip).permit(:title, :start_date, :end_date, user_ids:[], destination_ids: [])
 end
 ```
+
 
 ### . . . it worked! But, why?
 
