@@ -6,9 +6,9 @@ permalink:  digging_into_a_new_activerecord_association_class_method
 ---
 
 
-As I built my first Rails project with multiple models and "many-to-many" relationships, I found myself returning to the [ActiveRecord Associations Class Methods](https://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html#method-i-has_many) documentation over and over again. There were a few situations where I knew I set up the associations correctly, but I was still getting errors like, "Did you mean `#users_trips`, not `#users_trip`?" I needed a better understanding of the methods my objects and classes had access to through their ActiveRecord associations. It became clear that `#build` just doesn't work for everything, so I dug into the docs to figure out why and what other method I could use instead.
+As I built my first Rails project with multiple models and "many-to-many" relationships, I found myself returning to the [ActiveRecord Associations Class Methods](https://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html#method-i-has_many) documentation over and over again. There were a few situations where I knew I set up the associations correctly, but I was still getting errors like, "Did you mean `#users_trips`, not `#users_trip`?" I needed a better understanding of the methods my objects and classes had access to through their ActiveRecord associations. I quickly learned that `#build` just doesn't work for everything, so I dug into the docs to figure out why and what other method I could use instead.
 
-In this case, I was concerned about three classes (Trips, DestinationsTrip, and Destinations), that were related via a many-to-many relationship, with DestinationsTrip as the join model. The problem arose when I was building the form for a new trip with `:destination_ids` nested in the form.
+In this case, I was concerned about three models (Trips, DestinationsTrip, and Destinations). They were related via a many-to-many relationship, with DestinationsTrip as the join model. The problem arose when I was building the form for creating a new trip with `:destination_ids` nested in the form.
 
 I wanted to add a `collection_select` field that allowed users to select multiple destinations for the new trip. I pre-populated the Destinations table with data from Atlas Obscura's website, so I didn't need to create new destinations from scratch.
 
@@ -17,7 +17,9 @@ I tried the code below in my trips controller.
 ```
 def create
     @trip = @user.trips.build(trip_params)
+
     @trip.destinations.build(trip_params)
+
 		if @trip.save!
     . . .
 end
@@ -33,26 +35,30 @@ However, my app was returning errors, such as "undefined attribute `:title` for 
 
 In response, I started digging through the "has_many" association class methods, which the Trips class inherits from ActiveRecord. I stumbled upon the following method:
 
-`#collection_singular_ids=ids`, which is represented as `@trip.destination_ids=(trip_params[:destination_ids])` in my app.
+`#collection_singular_ids=ids`
+
+In my app, the method is represented as:
+
+`@trip.destination_ids=(trip_params[:destination_ids])`
 
 I plugged it into the #create action, and. . . .
 
 ```
 def create
-    @trip = @user.trips.build(trip_params)
-		if @trip.save!
-		    @trip.destination_ids=(trip_params[:destination_ids])
-		. . .
+@trip = @user.trips.build(trip_params)
+  if @trip.save!
+    @trip.destination_ids=(trip_params[:destination_ids])
+  . . .
 end
 
 private
 
 def trip_params
-    params.require(:trip).permit(:title, :start_date, :end_date, user_ids:[], destination_ids: [])
+  params.require(:trip).permit(:title, :start_date, :end_date, user_ids:[], destination_ids: [])
 end
 ```
 
-**. . . it worked! But, why?**
+### . . . it worked! But, why?
 
 `#collection_singular_ids=ids` replaces the destinations *collection* with destination *objects*. How do we get destination *objects*? They are identitied by the primary keys in the `:destination_ids` array.
 
