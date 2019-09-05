@@ -6,7 +6,7 @@ permalink:  breaking_down_rack
 ---
 
 
-Upon completion of my first MVC Sinatra app, I decided to step out of the weeds and made my way to the top of the hill overlooking the swampy, weedy valley. In other words, I spent so much time worrying about the details of my app that I wanted to review the high-level concepts I used to build it before moving on with the curriculum.
+Upon completion of my first MVC Sinatra app, I decided to step out of the weeds and climb a hill to take a look at my project from a different vantage point. I spent so much time worrying about the details of my app that I wanted to review the high-level concepts I used to build it before moving on with the curriculum.
 
 First, I started reviewing the gems that were required to simply allow my app to run in the browser. This list included Sinatra and Shotgun, but when I dug deeper into both of these, there was another gem that kept popping up. Enter 'rack.'
 
