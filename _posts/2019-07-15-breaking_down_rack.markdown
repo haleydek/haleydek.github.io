@@ -50,10 +50,8 @@ The `#finish` method is called on the Rack::Response object to simply put the st
 ```
 def call(env)
   req = Rack::Request.new(env)
-	
-	resp = Rack::Response.new
-	
-	resp.finish
+  resp = Rack::Response.new
+  resp.finish
 end
 ```
 
