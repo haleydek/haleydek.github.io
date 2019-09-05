@@ -48,7 +48,7 @@ def create
   @trip = @user.trips.build(trip_params)
 	
 	if @trip.save!
-    @trip.destination_ids=(trip_params[:destination_ids])
+	 @trip.destination_ids=(trip_params[:destination_ids])
   . . .
 end
 
