@@ -46,14 +46,14 @@ end
 ```
 
 The `#finish` method is called on the Rack::Response object to simply put the status, header, and body into an array.
-	
-	```
-	def call(env)
-	  req = Rack::Request.new(env)
-	  resp = Rack::Response.new
-	  resp.finish
-	end
-	```
+
+```
+def call(env)
+  req = Rack::Request.new(env)
+	resp = Rack::Response.new
+	resp.finish
+end
+```
 
 Rack prevents developers from having to manually write boilerplate code for receiving and sending HTTP responses in every app they create. This is why there were multiple gems in my app that were built using Rack!
 
