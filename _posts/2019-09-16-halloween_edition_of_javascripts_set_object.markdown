@@ -46,7 +46,7 @@ In order for JavaScript to recognize both occurrences of `{ "chocolate-bar": "He
 
 ![](https://i.imgur.com/0WaOQKy.png)
 
-In the snapshot above, `candySet` contains all unique values! By storing each chocolate object in a variable, I had easy access to each object's reference, or location in memory. I referenced these variables in the arrays to keep object references consistent. JavaScript removed the duplicate `hersheysAlmond` object reference when the `candySet` was created.
+In the snapshot above, `candySet` contains all unique values! By storing each chocolate object in a variable, I had easy access to each object's reference, or location in memory. I referenced these variables in the arrays to keep object references consistent. JavaScript removed the duplicate `hersheysDark` object reference when `candySet` was created.
 
 Overall, using the Set object can be handy if you need to compile a list of unique values from an array of data. However, you need to be aware of *what* JavaScript actually evaluates for uniqueness in order to obtain the desired result.
 
