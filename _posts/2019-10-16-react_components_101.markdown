@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "React components 101"
-date:       2019-10-16 12:18:13 +0000
+date:       2019-10-16 08:18:14 -0400
 permalink:  react_components_101
 ---
 
@@ -10,14 +10,14 @@ React is a JavaScript library that simplifies the process of creating an app's u
 
 In order to help maintain organization and uphold the single responsibility principle throughout a React app, it is important to understand the convention of building **presentational** and **container** components.
 
-##### Presentational components:
+### Presentational components:
 * Responsible for how things ***look***
 * Display content
 * Cannot alter data they render
 * Usually stateless
 * Data they display is passed to them as props
 
-##### Container components:
+### Container components:
 * Responsible for how things ***work***
 * Manage state and class methods
 * Contain complex logic
@@ -29,7 +29,7 @@ In order to help maintain organization and uphold the single responsibility prin
 
 Below are two component examples from my React-Redux project to help you visualize the difference between presentational and container components.
 
-##### BadgesContainer
+### BadgesContainer
 
 ![](https://i.imgur.com/rV4KAqe.png)
 
@@ -39,11 +39,11 @@ BadgesContainer is a *container* component (suprise!) because it:
 * Provides data to Badge children components
 * Has very little HTML markup
 
-##### Badge
+### Badge
 
 ![](https://i.imgur.com/lCXuUB6.png)
 
-Badge is a *presentational* component because it::
+Badge is a *presentational* component because it:
 * Receives props from BadgesContainer
 * Displays content
 * Does not alter data it receives via props
