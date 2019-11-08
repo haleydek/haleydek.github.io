@@ -12,7 +12,13 @@ First, I create an array of candy types for each pillowcase. Then, my sister and
 
 ![](https://i.imgur.com/HIMpRcI.png?1)
 
-The new array has duplicates of the candy types that were in both `haleysCandy` and `sistersCandy`. M&M's, Reeses, and `{ "chocolate-bar": "Hershey's Special Dark" }` appear twice in the new array. An easy way to remove duplicates from a list of values involves using the Set object in JavaScript.
+The new array has duplicate candy types that were present in both `haleysCandy` and `sistersCandy`. The duplicate candy types include:
+
+* M&M's
+* Reeses
+* `{ "chocolate-bar": "Hershey's Special Dark" }`
+
+An easy way to remove duplicates from a list of values involves using the Set object in JavaScript.
 
 ![](https://i.imgur.com/fqiMtjD.png)
 
@@ -28,9 +34,9 @@ Primitive data includes anything that is *not* an object and has no methods (i.e
 
 According to [MDN's JavaScript Guide for Working with Objects](http://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects), 
 
-<  In JavaScript, objects are a reference type. Two distinct objects are never equal, even if they have the same properties. Only comparing the same object reference with itself yields true.
+>  In JavaScript, objects are a reference type. Two distinct objects are never equal, even if they have the same properties. Only comparing the same object reference with itself yields true.
 
-I tested out this concept in the snapshot below. In the first two comparison statements, JavaScript does not recognize the objects as identical, even though they contain the same key and value. JavaScript is testing whether or not the objects reference the same location in memory, which is more efficient than evaluating the actual values within both objects.
+I tested out this concept in the snapshot below. In the first two comparison statements, JavaScript does not recognize the objects as identical, even though they contain the same key and value. JavaScript is testing whether or not the objects reference the same *location in memory*, which is more efficient than evaluating the actual values within both objects.
 
 The last example returns true because the same object reference is used on both sides of the operator.
 
