@@ -1,6 +1,6 @@
 ---
 layout: post
-title:      "Halloween edition of JavaScript's Set object"
+title:      "Trick-or-treating with JavaScript's Set object"
 date:       2019-09-16 17:52:18 -0400
 permalink:  halloween_edition_of_javascripts_set_object
 ---
