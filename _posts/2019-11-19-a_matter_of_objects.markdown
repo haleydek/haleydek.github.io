@@ -10,7 +10,7 @@ Programming is a matter of objects when using many popular languages, such as Ja
 
 Object-oriented programming provides a way for developers to organize and interact with data in a way that’s familiar. For example, you set a meal inside of a microwave and push buttons on the touchpad to heat up your food. A microwave’s touchpad provides a simple way to initialize complex processes that result in a warmed-up meal.
 
-[](https://media.giphy.com/media/nwU89Y2ttiire/giphy.gif)
+![](https://media.giphy.com/media/xT5LMFS8PGFZjqSMko/giphy.gif)
 
 A microwave has attributes like wattage, model, and size. It also has functions like defrost, cook popcorn, set cook time, etc. Similar to microwaves, objects in programming come with attributes and functions, making data easier to organize and interact with.
 
@@ -32,7 +32,7 @@ Similar to the buttons on a microwave, an object’s variables and functions pro
 
 Let’s say you are shopping for a new refrigerator. You notice that some models can dispense water, and an entertainment model has a screen for streaming TV. However, all of the models have the ability to cool and freeze food.
 
-![](https://imgur.com/673YTS3)
+![](https://imgur.com/673YTS3.png)
 
 When modeling the refrigerators in code, it would be silly to write the chill() and freeze() functions for every single refrigerator. Instead, you could write a single Refrigerator class that includes the generic methods shared by all refrigerators. Then, the Entertainment and Dispenser classes could inherit from the Refrigerator class.
 
