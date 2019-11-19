@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "A matter of objects"
-date:       2019-11-19 20:04:51 +0000
+date:       2019-11-19 15:04:52 -0500
 permalink:  a_matter_of_objects
 ---
 
@@ -10,7 +10,7 @@ Programming is a matter of objects when using many popular languages, such as Ja
 
 Object-oriented programming provides a way for developers to organize and interact with data in a way that’s familiar. For example, you set a meal inside of a microwave and push buttons on the touchpad to heat up your food. A microwave’s touchpad provides a simple way to initialize complex processes that result in a warmed-up meal.
 
-<iframe src="https://giphy.com/embed/NXfv0airL9nsk" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/best-gifs-amazon-dash-NXfv0airL9nsk">via GIPHY</a></p>
+[](https://media.giphy.com/media/nwU89Y2ttiire/giphy.gif)
 
 A microwave has attributes like wattage, model, and size. It also has functions like defrost, cook popcorn, set cook time, etc. Similar to microwaves, objects in programming come with attributes and functions, making data easier to organize and interact with.
 
