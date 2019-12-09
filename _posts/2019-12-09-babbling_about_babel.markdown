@@ -8,7 +8,7 @@ permalink:  babbling_about_babel
 
 React encourages the use of the latest JavaScript syntax to allow developers to take advantage of the newest syntactic sugar. However, not all browsers are compatible with ECMAScript 2015+. This compatibility issue is solved via Babel.
 
-What is Babel?
+## What is Babel?
 
 [Babel](https://babeljs.io/) is a JavaScript compiler that transforms the latest JavaScript syntax into older syntax that is interpreted by all browsers. It allows developers to write ES6+ code, without waiting for all browsers to support the newest syntax.
 
