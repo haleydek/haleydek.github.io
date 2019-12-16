@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Do you even hoist?"
-date:       2019-12-16 03:58:20 +0000
+date:       2019-12-15 22:58:21 -0500
 permalink:  do_you_even_hoist
 ---
 
@@ -42,9 +42,9 @@ Regardless of whether you use *var*, *let*, or *const*, the variable assignment 
 
 In the `eatingApple()` function above, the grannySmith variable is assigned a value, but it is not declared using *var*, *let*, or *const*. Usually, when variables are declared and assigned values inside of a function, they are only accessible with that function's scope. In the case above, the undeclared grannySmith variable becomes *global* when the `eatApple()` function is executed.
 
-## Hoisting order of prioritization
+## Hoisting order of priority
 
-JavaScript follows the following order of prioritization when hoisting eligible code to the top of the stack:
+JavaScript follows the following order of priority when hoisting eligible code to the top of the stack:
 
 1. Variable assignment
 2. Function declarations
