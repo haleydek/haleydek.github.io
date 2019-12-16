@@ -8,9 +8,9 @@ permalink:  do_you_even_hoist
 
 In JavaScript, you have the ability to call a function, or use a variable, before it’s declared. This concept is called **hoisting**, and it sounds like magic, right? Well, maybe at first, but understanding how JavaScript code is executed will help to demystify this concept.
 
-When JavaScript code is run, there are two phases that occur in relation to hoisting. In the first phase, variable and function declarations are saved in memory. At this point, declared variables are considered either uninitialized or undefined. In the second phase, variables are assigned values, and code is executed. Hoisting is possible because variables and functions are given references in memory *before* code is executed in the second phase.
+When JavaScript code is run, there are two phases that occur in relation to hoisting. In the first phase, variable and function declarations are saved in memory. At this point, declared variables are considered either uninitialized or undefined. In the second phase, variables are initialized, or in other words, assigned values, and code is executed. Hoisting is possible because variables and functions are given references in memory *before* code is executed in the second phase.
 
-Functions and variables each have their own nuances in regards to hoisting. It's important to understand these nuances and be mindful of them in order to utilize hoisting properly and avoid bugs.
+Functions and variables each have their own nuances in regards to hoisting. It's important to understand these nuances and be mindful of them in order to utilize hoisting effectively.
 
 ## Functions
 
@@ -30,9 +30,9 @@ In the code above, I tried hoisting a function declaration, `findApples()`, and 
 
 ![](https://i.imgur.com/2OJ7E3G.png)
 
-JavaScript only hoists variable declarations, not assignment. The initialization of variables is handled differently, depending on whether *var*, *let*, or *const* is used to declare them.
+JavaScript only hoists variable declarations, not assignments. The initialization of variables is handled differently, depending on whether *var*, *let*, or *const* is used to declare them.
 
-In the example above, *let* was used to declare the honeycrisp variable, and it threw a reference error when it was hoisted on line one. The same reference error would occur if honeycrisp was declared using *const*. However, in the case of *var*, variables are initially set to `undefined` upon declaration. If honeycrisp was defined using *var*, the return value of line one would have been `undefined`.
+In the example above, *let* was used to declare the honeycrisp variable, and it threw a reference error when it was hoisted on line one. The same reference error would occur if honeycrisp was declared using *const*. However, in the case of *var*, variables are initially set to `undefined` upon declaration. If honeycrisp was declared using *var*, the return value of line one would have been `undefined`.
 
 Regardless of whether you use *var*, *let*, or *const*, the variable assignment on line five will never be hoisted.
 
